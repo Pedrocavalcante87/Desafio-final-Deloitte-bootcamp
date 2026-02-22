@@ -2,7 +2,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DesafioFinal.Domain\DesafioFinal.Domain.csproj" />
-    <ProjectReference Include="..\DesafioFinal.Infrastructure\DesafioFinal.Infrastructure.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

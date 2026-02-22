@@ -1,0 +1,28 @@
+﻿services:
+  db:
+    image: postgres:16
+    container_name: desafiofinal-db
+    environment:
+      POSTGRES_DB: desafiofinal
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - desafiofinal_pgdata:/var/lib/postgresql/data
+
+  api:
+    build:
+      context: .
+      dockerfile: src/DesafioFinal.Api/Dockerfile
+    container_name: desafiofinal-api
+    environment:
+      ASPNETCORE_URLS: http://+:8080
+      ConnectionStrings__DefaultConnection: Host=db;Port=5432;Database=desafiofinal;Username=postgres;Password=postgres
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
+volumes:
+  desafiofinal_pgdata:

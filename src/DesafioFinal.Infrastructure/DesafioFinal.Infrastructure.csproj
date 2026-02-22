@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DesafioFinal.Domain\DesafioFinal.Domain.csproj" />
+    <ProjectReference Include="..\DesafioFinal.Application\DesafioFinal.Application.csproj" />
   </ItemGroup>
 
   <ItemGroup>

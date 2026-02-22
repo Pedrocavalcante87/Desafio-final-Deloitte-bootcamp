@@ -1,0 +1,346 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2026-02-20T00:00:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "req_create_equipamento",
+      "parentId": "fld_equipamentos",
+      "modified": 1708473600000,
+      "created": 1708473600000,
+      "url": "{{ _.baseUrl }}/api/equipamentos",
+      "name": "Criar Equipamento",
+      "description": "Criar um novo equipamento no sistema",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"codigo\": \"CAT-793F-999999\",\n  \"tipo\": \"Caminhao\",\n  \"modelo\": \"Caterpillar 793F\",\n  \"horimetro\": 0,\n  \"statusOperacional\": \"Operacional\",\n  \"dataAquisicao\": \"2026-02-20\",\n  \"localizacaoAtual\": \"Mina Carajás N4E\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1708473600000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_list_equipamentos",
+      "parentId": "fld_equipamentos",
+      "modified": 1708473600000,
+      "created": 1708473600000,
+      "url": "{{ _.baseUrl }}/api/equipamentos",
+      "name": "Listar Equipamentos (sem filtros)",
+      "description": "Listar todos os equipamentos com paginação",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "page",
+          "value": "1",
+          "description": "Número da página"
+        },
+        {
+          "name": "pageSize",
+          "value": "10",
+          "description": "Itens por página"
+        }
+      ],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1708473500000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_list_equipamentos_filtro_tipo",
+      "parentId": "fld_equipamentos",
+      "modified": 1708473600000,
+      "created": 1708473600000,
+      "url": "{{ _.baseUrl }}/api/equipamentos",
+      "name": "Listar por Tipo (Escavadeira)",
+      "description": "Filtrar equipamentos por tipo",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "page",
+          "value": "1"
+        },
+        {
+          "name": "pageSize",
+          "value": "10"
+        },
+        {
+          "name": "tipo",
+          "value": "Escavadeira"
+        }
+      ],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1708473400000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_list_equipamentos_filtro_status",
+      "parentId": "fld_equipamentos",
+      "modified": 1708473600000,
+      "created": 1708473600000,
+      "url": "{{ _.baseUrl }}/api/equipamentos",
+      "name": "Listar por Status (EmManutencao)",
+      "description": "Filtrar equipamentos por status operacional",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "page",
+          "value": "1"
+        },
+        {
+          "name": "pageSize",
+          "value": "10"
+        },
+        {
+          "name": "status",
+          "value": "EmManutencao"
+        }
+      ],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1708473300000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_list_equipamentos_filtro_codigo",
+      "parentId": "fld_equipamentos",
+      "modified": 1708473600000,
+      "created": 1708473600000,
+      "url": "{{ _.baseUrl }}/api/equipamentos",
+      "name": "Buscar por Código (CAT)",
+      "description": "Filtrar equipamentos por código parcial",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "page",
+          "value": "1"
+        },
+        {
+          "name": "pageSize",
+          "value": "10"
+        },
+        {
+          "name": "codigo",
+          "value": "CAT"
+        }
+      ],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1708473200000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_list_equipamentos_filtros_combinados",
+      "parentId": "fld_equipamentos",
+      "modified": 1708473600000,
+      "created": 1708473600000,
+      "url": "{{ _.baseUrl }}/api/equipamentos",
+      "name": "Listar com Múltiplos Filtros",
+      "description": "Combinar filtros de tipo, status e código",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "page",
+          "value": "1"
+        },
+        {
+          "name": "pageSize",
+          "value": "10"
+        },
+        {
+          "name": "tipo",
+          "value": "Caminhao"
+        },
+        {
+          "name": "status",
+          "value": "Operacional"
+        }
+      ],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1708473100000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_equipamento_by_id",
+      "parentId": "fld_equipamentos",
+      "modified": 1708473600000,
+      "created": 1708473600000,
+      "url": "{{ _.baseUrl }}/api/equipamentos/1",
+      "name": "Buscar Equipamento por ID",
+      "description": "Buscar um equipamento específico pelo ID",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1708473000000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_update_equipamento",
+      "parentId": "fld_equipamentos",
+      "modified": 1708473600000,
+      "created": 1708473600000,
+      "url": "{{ _.baseUrl }}/api/equipamentos/1",
+      "name": "Atualizar Equipamento",
+      "description": "Atualizar dados de um equipamento existente",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"codigo\": \"CAT-793F-000123\",\n  \"tipo\": \"Caminhao\",\n  \"modelo\": \"Caterpillar 793F\",\n  \"horimetro\": 19500.0,\n  \"statusOperacional\": \"EmManutencao\",\n  \"dataAquisicao\": \"2019-03-15\",\n  \"localizacaoAtual\": \"Oficina Central\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1708472900000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_delete_equipamento",
+      "parentId": "fld_equipamentos",
+      "modified": 1708473600000,
+      "created": 1708473600000,
+      "url": "{{ _.baseUrl }}/api/equipamentos/999",
+      "name": "Deletar Equipamento",
+      "description": "Deletar um equipamento do sistema",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1708472800000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_equipamentos",
+      "parentId": "wrk_equipamentos",
+      "modified": 1708473600000,
+      "created": 1708473600000,
+      "name": "Equipamentos",
+      "description": "Endpoints para gerenciamento de equipamentos",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1708473600000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_equipamentos",
+      "parentId": null,
+      "modified": 1708473600000,
+      "created": 1708473600000,
+      "name": "Sistema de Equipamentos - Desafio Final",
+      "description": "API REST para gerenciamento de equipamentos de mineração",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_base",
+      "parentId": "wrk_equipamentos",
+      "modified": 1708473600000,
+      "created": 1708473600000,
+      "name": "Base Environment",
+      "data": {
+        "baseUrl": "http://localhost:5084"
+      },
+      "dataPropertyOrder": {
+        "&": ["baseUrl"]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1708473600000,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_cookies",
+      "parentId": "wrk_equipamentos",
+      "modified": 1708473600000,
+      "created": 1708473600000,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    }
+  ]
+}
